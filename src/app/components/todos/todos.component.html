@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="card-panel teal lighten-2">
+    <h1 class="white-text">
+      Todos List
+    </h1>
+
+    <p style="text-align: right">
+      <i class="material-icons" style="font-size: 48px">assignment</i>
+    </p>
+
+  </div>
+  <!--
+  <input [(ngModel)]="data.title" placeholder="Enter new activity">
+  <button  (click)="addTodo()">  <i class="material-icons">add</i>Add </button>
+    -->
+
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">access_time</i>
+          <input id="icon_prefix" type="text" class="validate" [(ngModel)]="data.title">
+          <label for="icon_prefix">Enter New Activity</label>
+        </div>
+        <div class="input-field col s6">
+
+
+          <button class="btn waves-effect waves-light" type="submit" name="action" (click)="addTodo()">Add
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!--
+ <ul>
+    <li *ngFor="let todo of todo$">
+        <a [routerLink]="['../edit/'+todo.id]" href="">Edit</a>
+      {{todo.title}}
+      <button (click)="onDelete(todo.id)">X</button>
+    </li>
+  </ul>
+  -->
+
+  <hr>
+  <br>
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Activities</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let todo of todo$">
+      <tr>
+        <td>
+          <a [routerLink]="['../edit/'+todo.id]" href=""> <i class="material-icons center">edit</i></a>
+        </td>
+        <td>
+          {{todo.title}}
+        </td>
+        <td>
+          <button class="red-text" (click)="onDelete(todo.id)">  <i class="material-icons">delete</i></button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+  <br>
+  <br>
+  <br>
+
+  <a  router-link='/home' href=""class="waves-effect waves-light btn-small black">Go Back</a>
+
+</div>

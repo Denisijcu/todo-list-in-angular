@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Edit</h1>
+
+  <div *ngFor ="let todo of todo$">
+    <div class="row">
+        <div class="input-field col s12">
+
+            <input  type="text" class="validate" [(ngModel)]="todo.title">
+
+          </div>
+    </div>
+
+    <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="onSave(todo.title)">Save
+            <i class="material-icons right">send</i>
+          </button>
+    </div>
+
+  <!-- <button  (click)="onSave(todo.title)">Save </button> -->
+
+  </div>
+
+
+
+
+   <!--<a  router-link='/home' href=""class="waves-effect waves-light btn-small black">Go Back</a> -->
+
+</div>
